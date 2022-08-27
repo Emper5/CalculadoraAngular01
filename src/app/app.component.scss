@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'AdobeBold';
+    src: url('../assets/fonts/AdobeClean-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'AdobeMedium';
+    src: url('../assets/fonts/AdobeClean-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'AdobeRegular';
+    src: url('../assets/fonts/AdobeClean-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Digital';
+    src: url('../assets/fonts/ds-digital.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'DigitalPass';
+    src: url('../assets/fonts/ds-digital-pass.otf') format('opentype');
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: url('../assets/istockphoto-1159380456-612x612.jpg') no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .pinpad {
+        background-color: black;
+        height: 700px;
+        width: 450px;
+        border-radius: 18px;
+        box-shadow: 0px -14px 0px 0px rgba(22, 28, 39, 1) inset;
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.7);
+        box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.25);
+        .pinpad-front {
+            background: linear-gradient(270deg, #222B3D 0%, #6A758B 100%);
+            height: 686px;
+            width: 450px;
+            border-radius: 18px;
+            margin: auto;
+        }
+    }
+}
+
+.pinpad-inside {
+    margin-top: 100px;
+    height: 686px;
+    width: 420px;
+    background: linear-gradient(0deg, #364157, #364157), linear-gradient(0deg, #68748A, #68748A);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .screen {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 150px;
+        width: 394px;
+        background: #E5F3F2;
+        border: 2px solid #242D3F;
+        box-shadow: inset 0px 3px 6px 3px rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+    }
+    .pinpad-buttons {
+        margin-top: 10px;
+        width: 394px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        * {
+            height: 78px;
+            width: 90px;
+            background: linear-gradient(180deg, #414D66 0%, #161C27 100%);
+            border: 2px solid rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 0px 1px 1px rgba(143, 165, 208, 0.5), inset 0px 0px 0px 3px rgba(211, 226, 255, 0.19), inset 0px 0px 5px 2px rgba(105, 136, 198, 0.3);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-family: 'AdobeBold';
+            font-size: 40px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.code {
+    input {
+        width: 350px;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-family: 'Digital';
+        font-size: 60px;
+        margin-left: 25px;
+        margin-top: 20px;
+        color: rgba(93, 106, 105, 1);
+    }
+}
+
+.operation {
+    font-family: 'Digital';
+    font-size: 40px;
+    margin-right: 25px;
+    color: rgba(93, 106, 105, 1);
+}
+
+#delete {
+    background: linear-gradient(180deg, #EF6476 0%, #CF5060 100%);
+}
+
+#save {
+    background: linear-gradient(180deg, #6AECB0 0%, #42A484 100%);
+}
+
+.modal {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 834px;
+    height: 275px;
+    background: #F0F0F0;
+    border: 2px solid #949494;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5), 0px 8px 16px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    h1 {
+        font-family: 'AdobeMedium';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 54px;
+        line-height: 68px;
+        text-align: center;
+        color: #747474;
+    }
+    p {
+        width: 381px;
+        height: 60px;
+        font-family: 'AdobeRegular';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+        margin: auto;
+        color: #747474;
+    }
+    #closeModal {
+        position: absolute;
+        right: 0;
+        margin-right: 34.25px;
+        margin-top: 34.25px;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .pinpad {
+        height: 457px!important;
+        width: 300px!important;
+        .pinpad-front {
+            height: 446px!important;
+            width: 300px!important;
+        }
+    }
+    .pinpad-inside {
+        height: 445px;
+        width: 268px;
+        .screen {
+            margin-top: 20px;
+            height: 93px;
+            width: 238px;
+        }
+        .pinpad-buttons {
+            margin-top: 10px;
+            width: 238px;
+            * {
+                height: 61px;
+                width: 71px;
+                font-size: 32px;
+            }
+        }
+    }
+    .code input {
+        width: 160px;
+        font-size: 50px;
+        margin-left: 20px;
+    }
+    .modal {
+        width: 300px;
+        height: 380px;
+        h1 {
+            margin-top: 72px;
+            font-size: 36px;
+            line-height: 45px;
+        }
+        p {
+            width: 270px;
+            height: 163px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}
