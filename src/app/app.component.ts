@@ -40,7 +40,11 @@ export class AppComponent implements  AfterViewInit{
       this.screen = input;
       this.isrecurrent ? this.isrecurrent = false : this.isrecurrent;
     } else {
-      this.screen = this.screen + input
+      if(this.screen.length < 10){
+        this.screen = this.screen + input
+      } else {
+        alert("Cifra demasiado grande")
+      }
     }
 
   }
