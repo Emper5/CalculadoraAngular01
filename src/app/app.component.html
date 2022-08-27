@@ -1,7 +1,7 @@
 <div id="container" class="container">
-    <div class="pinpad">
-        <div class="pinpad-front">
-            <div class="pinpad-inside">
+    <div class="calculator">
+        <div class="calculator-front">
+            <div class="calculator-inside">
                 <div class="screen">
                     <div class="operation">
                         {{first}} {{operator}}
@@ -10,7 +10,7 @@
                         <input [(ngModel)]="screen" #inputBlured (blur)="onBlur()" (keypress)="clickOrkeyboardInput($event.key); stopDefAction($event);" name="screen" type="text" maxlength="11">
                     </div>
                 </div>
-                <div class="pinpad-buttons">
+                <div class="calculator-buttons">
                     <div (click)="clearActual()" id="delete" class="cursor-pointer">CE</div>
                     <div (click)="clearAll()" id="delete" class="cursor-pointer">C</div>
                     <div (click)="delete()" id="delete" class="cursor-pointer">Del</div>
