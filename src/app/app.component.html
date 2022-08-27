@@ -1,5 +1,4 @@
 <div id="container" class="container">
-    <div id="alert" class="hide-item"></div>
     <div class="pinpad">
         <div class="pinpad-front">
             <div class="pinpad-inside">
@@ -11,8 +10,6 @@
                         <input [(ngModel)]="screen" #inputBlured (blur)="onBlur()" (keypress)="clickOrkeyboardInput($event.key); stopDefAction($event);" name="screen" type="text" maxlength="11">
                     </div>
                 </div>
-
-
                 <div class="pinpad-buttons">
                     <div (click)="clearActual()" id="delete" class="cursor-pointer">CE</div>
                     <div (click)="clearAll()" id="delete" class="cursor-pointer">C</div>

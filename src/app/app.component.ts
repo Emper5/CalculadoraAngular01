@@ -25,12 +25,6 @@ export class AppComponent implements  AfterViewInit{
     this.inputBlured.nativeElement.focus();
   }
 
-  delete(){
-    this.screen = this.screen.slice(0,-1);
-    if(this.screen === ''){
-      this.screen = '0'
-    }
-  }
 
   clickOrkeyboardInput(input: string ){
     if(input.match("^[+-/=\*?]+$") && input !== '.'){
@@ -46,7 +40,7 @@ export class AppComponent implements  AfterViewInit{
       this.screen = input;
       this.isrecurrent ? this.isrecurrent = false : this.isrecurrent;
     } else {
-     this.screen = this.screen + input
+      this.screen = this.screen + input
     }
 
   }
@@ -82,18 +76,32 @@ export class AppComponent implements  AfterViewInit{
         this.isrecurrent = true;
       }
       operator === '=' ? this.operator = '' : this.operator = operator;
-      }
+    }
 
   }
+
+  round(num: number) {
+    var m = Number((Math.abs(num) * 100000).toPrecision(15));
+    return Math.round(m) / 100000 * Math.sign(num);
+  }
+
   changeSign(){
     let screenToNumber = parseFloat(this.screen);
     screenToNumber = screenToNumber * (-1);
     this.screen = screenToNumber.toString();
   }
 
+  delete(){
+    this.screen = this.screen.slice(0,-1);
+    if(this.screen === ''){
+      this.screen = '0'
+    }
+  }
+
   clearActual(){
     this.screen = '0';
   }
+
   clearAll(){
     this.first = undefined;
     this.isFirstDigit = false;
@@ -104,8 +112,4 @@ export class AppComponent implements  AfterViewInit{
 
   }
 
-  round(num: number) {
-    var m = Number((Math.abs(num) * 100000).toPrecision(15));
-    return Math.round(m) / 100000 * Math.sign(num);
-}
 }
