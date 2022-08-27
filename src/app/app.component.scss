@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .pinpad {
+    .calculator {
         background-color: black;
         height: 700px;
         width: 450px;
@@ -27,7 +27,7 @@
         box-shadow: 0px -14px 0px 0px rgba(22, 28, 39, 1) inset;
         box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.7);
         box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.25);
-        .pinpad-front {
+        .calculator-front {
             background: linear-gradient(270deg, #222B3D 0%, #6A758B 100%);
             height: 686px;
             width: 450px;
@@ -37,7 +37,7 @@
     }
 }
 
-.pinpad-inside {
+.calculator-inside {
     margin-top: 100px;
     height: 686px;
     width: 420px;
@@ -60,7 +60,7 @@
         box-shadow: inset 0px 3px 6px 3px rgba(0, 0, 0, 0.6);
         border-radius: 5px;
     }
-    .pinpad-buttons {
+    .calculator-buttons {
         margin-top: 10px;
         width: 394px;
         display: flex;
@@ -120,15 +120,15 @@
 }
 
 @media (max-width: 450px) {
-    .pinpad {
+    .calculator {
         height: 457px!important;
         width: 300px!important;
-        .pinpad-front {
+        .calculator-front {
             height: 446px!important;
             width: 300px!important;
         }
     }
-    .pinpad-inside {
+    .calculator-inside {
         height: 445px;
         width: 268px;
         .screen {
@@ -136,7 +136,7 @@
             height: 93px;
             width: 238px;
         }
-        .pinpad-buttons {
+        .calculator-buttons {
             margin-top: 10px;
             width: 238px;
             * {
