@@ -1,21 +1,22 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { RegExp } from "./../utils/regExp";
+import { MathCalculator } from "./../enums/math.enum";
+import { ErrorCalculator } from "./../enums/errors.enum";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements  AfterViewInit{
-
+export class AppComponent implements AfterViewInit{
   @ViewChild('inputBlured', {static: false}) inputBlured!: ElementRef;
-  screen: string = '0';
+  screen: string = MathCalculator.zero;
   title = 'basicCalculator';
   isFirstDigit = false;
   isrecurrent = false;
   first : number|undefined;
   second : number|undefined;
-  operator : string = '';
-
+  operator : string = MathCalculator.empty;
 
   ngAfterViewInit(): void {
     this.onBlur();
@@ -25,25 +26,24 @@ export class AppComponent implements  AfterViewInit{
     this.inputBlured.nativeElement.focus();
   }
 
-
   clickOrkeyboardInput(input: string ){
-    if(input.match("^[+-/=\*?]+$") && input !== '.'){
+    if( RegExp.operatorMatching(input) && input !== MathCalculator.dot){
       this.calculate(input);
     }
     if(input === 'Enter'){
-      this.calculate('=');
+      this.calculate(MathCalculator.equal);
     }
-    if(!input.match("^[0-9\.]+$")){
+    if(!RegExp.numbersMatching(input)){
       return;
     }
-    if(isNaN(parseFloat(this.screen)) || this.screen === '0' || this.isrecurrent){
+    if(isNaN(parseFloat(this.screen)) || this.screen === MathCalculator.zero || this.isrecurrent){
       this.screen = input;
       this.isrecurrent ? this.isrecurrent = false : this.isrecurrent;
     } else {
-      if(this.screen.length < 10){
+      if(this.screen.length < 11){
         this.screen = this.screen + input
       } else {
-        alert("Cifra demasiado grande")
+        alert(ErrorCalculator.tooBig)
       }
     }
 
@@ -56,7 +56,7 @@ export class AppComponent implements  AfterViewInit{
   calculate(operator: string){
     let solution: string;
     if(!this.isFirstDigit){
-      if(operator === '='){
+      if(operator === MathCalculator.equal){
         return;
       }
       this.first = parseFloat(this.screen);
@@ -65,22 +65,22 @@ export class AppComponent implements  AfterViewInit{
       this.clearActual();
       return;
     }
-    if(this.isFirstDigit){
-      if(this.operator !== ''){
-        this.second = parseFloat(this.screen);
-        solution = this.round(eval(this.first!.toString()+this.operator+this.second.toString())).toString();
-        if(solution.length < 11){
-          this.screen = solution
-        } else {
-          this.clearAll();
-          alert('Resultado con demasiadas cifras o decimales');
-        }
-        this.first = parseFloat(this.screen);
-        this.second = 0;
-        this.isrecurrent = true;
+
+    if(this.operator !== MathCalculator.empty){
+      this.second = parseFloat(this.screen);
+      solution = this.round(eval(this.first!.toString()+this.operator+this.second.toString())).toString();
+      if(solution.length < 11){
+        this.screen = solution
+      } else {
+        this.clearAll();
+        alert(ErrorCalculator.tooBig);
       }
-      operator === '=' ? this.operator = '' : this.operator = operator;
+      this.first = parseFloat(this.screen);
+      this.second = 0;
+      this.isrecurrent = true;
     }
+    operator === MathCalculator.equal ? this.operator = MathCalculator.empty : this.operator = operator;
+
 
   }
 
@@ -97,13 +97,13 @@ export class AppComponent implements  AfterViewInit{
 
   delete(){
     this.screen = this.screen.slice(0,-1);
-    if(this.screen === ''){
-      this.screen = '0'
+    if(this.screen === MathCalculator.empty){
+      this.screen = MathCalculator.zero;
     }
   }
 
   clearActual(){
-    this.screen = '0';
+    this.screen = MathCalculator.zero;
   }
 
   clearAll(){
@@ -111,8 +111,8 @@ export class AppComponent implements  AfterViewInit{
     this.isFirstDigit = false;
     this.isrecurrent = false;
     this.second = undefined;
-    this.operator = '';
-    this.screen = '0';
+    this.operator = MathCalculator.empty;
+    this.screen = MathCalculator.zero;
 
   }
 
