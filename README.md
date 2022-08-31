@@ -1,27 +1,43 @@
-# BasicCalculator
+# BasicCalculator Proyect
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+_This is a basic proyect showing a calculator with Angular 12._
 
-## Development server
+## Starting 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+_Used tools:_
 
-## Code scaffolding
+- Git Fork
+- npm 7.20.3
+- Visual Studio Code
+- Angular CLI 16.16.0
+- Node 16.15.0
+- TypeScript 4.3.5
+- SASS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Instalation and use instructions 🔧
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+_Get started Clone the repo git clone https://github.com/Emper5/CalculadoraAngular01_
 
-## Running unit tests
+```
+cd CalculadoraAngular01_
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm install
+```
 
-## Running end-to-end tests
+```
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+_In the browser, we access to:_
 
-## Further help
+```
+http://localhost:4200/
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Author ✒️
+
+* **Gabriel Cruz Rivera** - *CalculadoraAngular01* - [Emper5](https://github.com/Emper5/CalculadoraAngular01)
