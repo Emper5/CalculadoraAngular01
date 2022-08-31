@@ -1,11 +1,16 @@
 # BasicCalculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+This is a basic proyect showing a calculator with Angular 12. 
 
-## Development server
+Get started
+Clone the repo
+git clone https://github.com/bryanforbes/intern-angular
+cd intern-angular
+Install npm packages
+Install the npm packages described in the package.json and verify that it works:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+npm install
+npm start
+The npm start command builds (compiles TypeScript and copies assets) the application into dist/, watches for changes to the source files, and runs lite-server on port 3000.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Shut it down manually with Ctrl-C.
