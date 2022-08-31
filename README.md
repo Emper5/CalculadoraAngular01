@@ -5,8 +5,11 @@ This is a basic proyect showing a calculator with Angular 12.
 Get started
 Clone the repo
 git clone https://github.com/Emper5/CalculadoraAngular01
+
 cd CalculadoraAngular01
+
 Install npm packages
+
 Install the npm packages described in the package.json and verify that it works:
 
 npm install
