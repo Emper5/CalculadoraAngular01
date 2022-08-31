@@ -1,4 +1,4 @@
-# BasicCalculator
+# BasicCalculator Project
 
 This is a basic proyect showing a calculator with Angular 12. 
 
