@@ -1,21 +1,44 @@
-# BasicCalculator Project
 
-This is a basic proyect showing a calculator with Angular 12. 
+# BasicCalculator Proyect
 
-Get started
-Clone the repo
-git clone https://github.com/Emper5/CalculadoraAngular01
+_This is a basic proyect showing a calculator with Angular 12._
 
-cd CalculadoraAngular01
+## Starting 🚀
 
-Install npm packages
+_Used tools:_
 
-Install the npm packages described in the package.json and verify that it works:
+- Git Fork
+- npm 7.20.3
+- Visual Studio Code
+- Angular CLI 16.16.0
+- Node 16.15.0
+- TypeScript 4.3.5
+- SASS
 
+### Instalation and use instructions 🔧
+
+
+_Get started Clone the repo git clone https://github.com/Emper5/CalculadoraAngular01_
+
+```
+cd CalculadoraAngular01_
+```
+
+```
 npm install
+```
 
-npm start
+```
+ng serve
+```
 
-The npm start command builds (compiles TypeScript and copies assets) the application into dist/, watches for changes to the source files, and runs lite-server on port 3000.
+_In the browser, we access to:_
 
-Shut it down manually with Ctrl-C.
+```
+http://localhost:4200/
+```
+
+
+## Author ✒️
+
+* **Gabriel Cruz Rivera** - *CalculadoraAngular01* - [Emper5](https://github.com/Emper5/CalculadoraAngular01)
